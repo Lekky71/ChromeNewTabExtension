@@ -1,0 +1,30 @@
+{
+    "name": "Smash New Tab",
+    "version": "1.0",
+    "manifest_version": 2,
+    "description": "An new tab chrome extension....",
+    "chrome_url_overrides": {
+        "newtab": "index.html"
+    },
+    "omnibox": {
+        "keyword": "chrome new tab"
+    },
+    "browser_action": {
+        "default_icon": "/images/logos/bookmark.png",
+        "default_title": "Smash New Tab",
+        "default_popup": "popup.html"
+    },
+    "background": {
+        "scripts": [
+            "/js/background.js",
+          "/js/index.js"
+        ]
+    },
+    "permissions": [
+        "geolocation",
+        "alarms",
+        "<all_urls>"
+    ]
+
+
+}

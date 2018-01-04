@@ -1,0 +1,224 @@
+body {
+    font-family: 'Indie Flower', cursive;
+    line-height: 30px;
+    font-size: 18px;
+    background: url('../images/backgrounds/backone.jpeg') no-repeat ;
+    color: #ffffff;
+}
+
+a {
+    color: #ffffff;
+}
+a:hover {
+    color: #1e7e34;
+}
+
+.page-container {
+    margin-top: 3%;
+}
+
+.search-section {
+    width: 50%;
+    margin: 25%;
+}
+
+.nav-header {
+    margin-right: 2%;
+}
+
+.search-box {
+    width: 50%;
+    padding-left: 4%;
+    border-color: ghostwhite;
+    height: inherit
+}
+.person-city {
+    margin-right: 25%;
+    font-size: 30px;
+    text-align: left;
+}
+
+.quick-bar__item {
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: #fff no-repeat center;
+    -webkit-transition: all .3s;
+    transition: all .3s;
+    position: relative;
+    background-size: contain;
+    flex-shrink: 0;
+    text-align: center;
+
+    border-radius: 50%;
+    behavior: url(PIE.htc);
+}
+
+.quick-bar__itemdiv {
+    margin: 5%;
+    margin-bottom: 2%;
+    margin-top: 1%;}
+
+
+.youtube {
+     background-image: url('../images/logos/youtube.png');
+    bookmark-label: "th";
+
+ }
+.facebook {
+     background-image: url('../images/logos/facebook.png');
+ }
+.twitter {
+     background-image: url('../images/logos/twitter.jpg');
+ }
+.instagram {
+     background-image: url('../images/logos/instagram.png');
+ }
+.pinterest {
+     background-image: url('../images/logos/pinterest.png');
+ }
+.linkedin {
+     background-image: url('../images/logos/linkedin.png');
+ }
+.amazon {
+     background-image: url('../images/logos/amazon.jpg');
+ }
+.gmail {
+     background-image: url('../images/logos/gmail.png');
+ }
+.googlekeep {
+     background-image: url('../images/logos/googlekeep.png');
+ }
+.bookmark {
+     background-image: url('../images/logos/bookmark.png');
+ }
+
+
+/* start weather widget */
+.widget {
+    /* end weather widget */
+}
+.widget.weather-widget {
+    position: absolute;
+    left: 0;
+    bottom: -60px;
+    width: 100%;
+    color: #fff;
+    z-index: 100;
+}
+.widget.weather-widget .widget-body {
+    font-size: 12px;
+    padding-bottom: 10px;
+}
+.widget.weather-widget .wi {
+    width: 50px;
+    height: 50px;
+    background-size: cover;
+    display: block;
+    margin: 0px auto;
+    float: left;
+    filter: brightness(0) invert(1);
+}
+.widget.weather-widget .main-info {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 30px 0px;
+}
+.widget.weather-widget .main-info .temp-holder {
+    position: relative;
+    top: -4px;
+}
+.widget.weather-widget .main-info .temp {
+    font-size: 32px;
+    font-weight: 400;
+    display: inline-block;
+    margin-left: 10px;
+    margin-top: 7px;
+}
+.widget.weather-widget .main-info .units {
+    vertical-align: top;
+    display: inline-block;
+    color: #fff;
+    font-size: 32px;
+    font-weight: 400;
+}
+.widget.weather-widget .main-info .units span {
+    display: none;
+    margin-top: 7px;
+}
+.widget.weather-widget .main-info .units span.active {
+    display: block;
+}
+
+.temp-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+    margin-right: 6px;
+    background-image: url("../images/weather/temperature.png");
+    background-size: cover;
+}
+
+.wind-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+    margin-right: 6px;
+    background-image: url("../images/weather/wind_direction.png");
+    background-size: cover;
+}
+.humidity-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+    margin-right: 9px;
+    background-image: url("../images/weather/humidity.png");
+    background-size: cover;
+}
+.sunrise-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+    margin-right: 9px;
+    background-image: url("../images/weather/sunrise.png");
+    background-size: cover;
+    margin-bottom: 5px;
+}
+.sunset-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 35px;
+    height: 35px;
+    margin-right: 9px;
+    margin-bottom: 5px;
+    background-image: url("../images/weather/sunset.png");
+    background-size: cover;
+}
+.pressure-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 35px;
+    height: 30px;
+    margin-right: 9px;
+    background-image: url("../images/weather/pressure.png");
+    background-size: cover;
+}
+.weather-item {
+    margin-left: 8%;
+    color: #fff;
+    vertical-align: middle;
+    font-size: 30px;
+}
+.widget.weather-widget .main-info .weather-item.value {
+    color: #fff;
+}
+.widget.weather-widget .main-info .weather-item.hum:after {
+    content: "%";
+}
+
+
