@@ -1,13 +1,23 @@
+html {
+    transition: 3s;
+    background-blend-mode: darken;
+}
+
 body {
-    font-family: 'Indie Flower', cursive;
+    font-family: 'Raleway', sans-serif;
     line-height: 30px;
     font-size: 18px;
-    background: url('../images/backgrounds/backone.jpeg') no-repeat ;
+
+    background: no-repeat ;
+    /*url('../images/backgrounds/5.jpg')*/
     color: #ffffff;
+
+    background-size: cover;
+
 }
 
 a {
-    color: #ffffff;
+    color: black;
 }
 a:hover {
     color: #1e7e34;
@@ -24,16 +34,22 @@ a:hover {
 
 .nav-header {
     margin-right: 2%;
+    color: #ffffff;
+}
+.search-header {
+    margin-right: 7%;
+    color: #ffffff;
 }
 
 .search-box {
     width: 50%;
     padding-left: 4%;
     border-color: ghostwhite;
-    height: inherit
+    height: inherit;
+    margin-top: 1%;
 }
 .person-city {
-    margin-right: 25%;
+    margin-right: 40%;
     font-size: 30px;
     text-align: left;
 }
@@ -46,12 +62,20 @@ a:hover {
     -webkit-transition: all .3s;
     transition: all .3s;
     position: relative;
-    background-size: contain;
+    background-size: 70%;
     flex-shrink: 0;
     text-align: center;
 
     border-radius: 50%;
     behavior: url(PIE.htc);
+    /*-webkit-transition: margin 0.5s ease-out;*/
+    -moz-transition: margin 0.5s ease-out;
+    -o-transition: margin 0.5s ease-out;
+}
+
+
+.quick-bar__item:hover {
+    margin-top: 5px;
 }
 
 .quick-bar__itemdiv {
@@ -89,10 +113,13 @@ a:hover {
 .googlekeep {
      background-image: url('../images/logos/googlekeep.png');
  }
-.bookmark {
-     background-image: url('../images/logos/bookmark.png');
+.spotify {
+     background-image: url('../images/logos/spotify.png');
  }
 
+.bookmark {
+    background-image: url('../images/logos/bookmark.png');
+}
 
 /* start weather widget */
 .widget {
@@ -151,68 +178,40 @@ a:hover {
     display: block;
 }
 
-.temp-icon {
+.weather-icon {
     display: inline-block;
     vertical-align: middle;
-    width: 35px;
-    height: 35px;
+    width: 30px;
+    height: 30px;
     margin-right: 6px;
     background-image: url("../images/weather/temperature.png");
     background-size: cover;
 }
+.temp-icon {
+    background-image: url("../images/weather/temperature.png");
+}
 
 .wind-icon {
-    display: inline-block;
-    vertical-align: middle;
-    width: 35px;
-    height: 35px;
-    margin-right: 6px;
     background-image: url("../images/weather/wind_direction.png");
-    background-size: cover;
 }
 .humidity-icon {
-    display: inline-block;
-    vertical-align: middle;
-    width: 35px;
-    height: 35px;
-    margin-right: 9px;
     background-image: url("../images/weather/humidity.png");
-    background-size: cover;
 }
 .sunrise-icon {
-    display: inline-block;
-    vertical-align: middle;
-    width: 35px;
-    height: 35px;
-    margin-right: 9px;
     background-image: url("../images/weather/sunrise.png");
-    background-size: cover;
     margin-bottom: 5px;
 }
 .sunset-icon {
-    display: inline-block;
-    vertical-align: middle;
-    width: 35px;
-    height: 35px;
-    margin-right: 9px;
-    margin-bottom: 5px;
     background-image: url("../images/weather/sunset.png");
-    background-size: cover;
 }
 .pressure-icon {
-    display: inline-block;
-    vertical-align: middle;
-    width: 35px;
-    height: 30px;
-    margin-right: 9px;
     background-image: url("../images/weather/pressure.png");
-    background-size: cover;
 }
 .weather-item {
-    margin-left: 8%;
+    margin-left: 7%;
     color: #fff;
     vertical-align: middle;
-    font-size: 30px;
+    font-size: 17px;
 }
 .widget.weather-widget .main-info .weather-item.value {
     color: #fff;
@@ -220,5 +219,137 @@ a:hover {
 .widget.weather-widget .main-info .weather-item.hum:after {
     content: "%";
 }
+
+
+
+/*******************************
+* MODAL AS LEFT/RIGHT SIDEBAR
+* Add "left" or "right" in modal parent div, after class="modal".
+* Get free snippets on bootpen.com
+*******************************/
+.modal.left .modal-dialog,
+.modal.right .modal-dialog {
+    position: fixed;
+    margin: auto;
+    width: 320px;
+    height: 100%;
+    -webkit-transform: translate3d(0%, 0, 0);
+    -ms-transform: translate3d(0%, 0, 0);
+    -o-transform: translate3d(0%, 0, 0);
+    transform: translate3d(0%, 0, 0);
+}
+
+.modal.left .modal-content,
+.modal.right .modal-content {
+    height: 100%;
+    overflow-y: auto;
+}
+
+.modal.left .modal-body,
+.modal.right .modal-body {
+    padding: 15px 15px 80px;
+}
+
+/*Left*/
+.modal.left.fade .modal-dialog{
+    left: -320px;
+    -webkit-transition: opacity 0.3s linear, left 0.3s ease-out;
+    -moz-transition: opacity 0.3s linear, left 0.3s ease-out;
+    -o-transition: opacity 0.3s linear, left 0.3s ease-out;
+    transition: opacity 0.3s linear, left 0.3s ease-out;
+}
+
+.modal.left.fade.in .modal-dialog{
+    left: 0;
+}
+
+/*Right*/
+.modal.right.fade .modal-dialog {
+    right: -320px;
+    -webkit-transition: opacity 0.3s linear, right 0.3s ease-out;
+    -moz-transition: opacity 0.3s linear, right 0.3s ease-out;
+    -o-transition: opacity 0.3s linear, right 0.3s ease-out;
+    transition: opacity 0.3s linear, right 0.3s ease-out;
+}
+
+.modal.right.fade.in .modal-dialog {
+    right: 0;
+}
+
+/* ----- MODAL STYLE ----- */
+.modal-content {
+    border-radius: 0;
+    border: none;
+}
+
+.modal-header {
+    border-bottom-color: #EEEEEE;
+    background-color: #FAFAFA;
+}
+
+/* ----- v CAN BE DELETED v ----- */
+body {
+    background-color: #78909C;
+}
+
+.demo {
+    padding-top: 60px;
+    padding-bottom: 110px;
+}
+
+.btn-demo {
+    margin: 15px;
+    padding: 10px 15px;
+    border-radius: 0;
+    font-size: 16px;
+    background-color: #FFFFFF;
+}
+
+.btn-demo:focus {
+    outline: 0;
+}
+
+.demo-footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px;
+    background-color: #212121;
+    text-align: center;
+}
+
+.demo-footer > a {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 16px;
+    color: #fff;
+}
+
+select {
+    display:table-row;
+    border: none;
+    width: 50%;
+    height: 25px;
+    background: transparent none;
+    outline: none;
+    overflow:hidden;
+    /*opacity: .3;*/
+}
+select::selection{
+    border: transparent;
+}
+option {
+    display: table-cell;
+    width: 1%;
+    border: none;
+    background: transparent;
+    outline: none;
+    /*box-shadow: 0 0 10px 20px #0056b3 inset;*/
+    /*opacity: .2;*/
+}
+/*option {*/
+    /*border: transparent;*/
+    /*background: black repeat;*/
+/*}*/
 
 

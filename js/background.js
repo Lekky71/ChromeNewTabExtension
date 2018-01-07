@@ -76,8 +76,11 @@ chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
             sendResponse(lastResult);
         });
     }
+    else if(request.action === "checkBookmark"){
+        chrome.bookmarks.getTree((allBookmarksArray) => {
+            console.log(allBookmarksArray);
+            sendResponse(allBookmarksArray);
+        });
+    }
 });
 
-chrome.bookmarks.getTree((allBookmarksArray) => {
-    console.log(allBookmarksArray);
-});

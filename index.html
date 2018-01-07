@@ -7,11 +7,12 @@
     <!--<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>-->
     <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
     <link href="css/style.css" rel="stylesheet" type="text/css">
-    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Raleway:500&amp;subset=latin-ext" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/css3clock.css"/>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/index.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/jquery.form/3.51/jquery.form.min.js"></script>
+    <script type="text/javascript" src="js/boookmarker.js"></script>
+    <script type="text/javascript" src="js/clock.js"></script>
 </head>
 <body>
 <div>
@@ -21,8 +22,6 @@
                 <nav class="nav-justified nav-header">
                     <a id="city-name" class="person-city">Hello</a>
                     <a href="https://mail.google.com" class="nav-header">Gmail</a>
-                    <a href="https://images.google.com" class="nav-header">Images</a>
-                    <a href="https://www.google.com/videohp" class="nav-header">Video</a>
                     <a href="/privacy.html" class="nav-header">Privacy policy</a>
                     <a href="/terms.html" class="nav-header">Terms of Service</a>
                 </nav>
@@ -30,11 +29,40 @@
         </div>
 
 
-        <div class="text-center text-md-center" style="margin-top: 5%; margin-left: 3.5%">
-            <form action="https://www.google.com.ng/webhp?q=" style="height: 60px" method="get" >
-                <input id="search-text" placeholder="Search web" class="search-box">
+        <div id="liveclock" class="outer_face" style="margin-top: 3%">
+
+            <div class="marker oneseven"></div>
+            <div class="marker twoeight"></div>
+            <div class="marker fourten"></div>
+            <div class="marker fiveeleven"></div>
+
+            <div class="inner_face">
+                <div class="hand hour"></div>
+                <div class="hand minute"></div>
+                <div class="hand second"></div>
+            </div>
+
+        </div>
+        <div id="current-date" style="margin-left: 1.5%">
+
+        </div>
+
+        <div class="text-center text-md-center" style="margin-top: -2%; margin-left: 3.5%">
+
+            <form id="search-form" action="https://www.google.com/search" style="height: 60px" method="get">
+                <div class="flex-md-row" style="margin-left: 0%">
+                    <select size="2" name="tbm" class="flex-md-row">
+                        <option value="" class="search-option" selected>Web</option>
+                        <option value="isch">Images</option>
+                        <option value="nws">News</option>
+                        <option value="vid">Videos</option>
+                        <option value="map">Maps</option>
+                    </select>
+                </div>
+                <input id="search-text" placeholder="Search web" class="search-box" name="q" >
             </form>
-            <div class="d-flex" style="margin-top: 5%">
+
+            <div class="d-flex container" style="margin-top: 5%">
                 <div class="quick-bar__itemdiv">
                     <a href="https://www.youtube.com/" class="quick-bar__item youtube"></a>
                     <span>Youtube</span>
@@ -48,36 +76,14 @@
                     <span>Twitter</span>
                 </div>
                 <div class="quick-bar__itemdiv">
-                    <a href="https://www.instagram.com/" class="quick-bar__item instagram"></a>
-                    <span>Instagram</span>
-                </div>
-                <div class="quick-bar__itemdiv">
-                    <a href="https://www.pinterest.com/" class="quick-bar__item pinterest"></a>
-                    <span>Pinterest</span>
-                </div>
-
-            </div>
-            <div class="d-flex" style="margin-top: 5%">
-                <div class="quick-bar__itemdiv">
-                    <a href="https://www.linkedin.com/" class="quick-bar__item linkedin"></a>
-                    <span>LinkedIn</span>
-                </div>
-                <div class="quick-bar__itemdiv">
-                    <a  class="quick-bar__item bookmark" id="bookmarklink" ></a>
-                    <span >Bookmarks</span>
-                </div>
-                <div class="quick-bar__itemdiv">
-                    <a href="https://mail.google.com" class="quick-bar__item gmail"></a>
-                    <span>Gmail</span>
-                </div>
-                <div class="quick-bar__itemdiv">
                     <a href="https://www.amazon.com/" class="quick-bar__item amazon"></a>
                     <span>Amazon</span>
                 </div>
-                <div class="quick-bar__itemdiv">
-                    <a href="https://keep.google.com/" class="quick-bar__item googlekeep"></a>
-                    <span>Google Keep</span>
+                <div class="quick-bar__itemdiv" data-toggle="modal" data-target="#exampleModalLong">
+                    <a href="/your bookmarks" class="quick-bar__item bookmark"></a>
+                    <span>Bookmarks</span>
                 </div>
+
             </div>
         </div>
     </div>
@@ -90,43 +96,71 @@
 </div>
 
 
-<marquee style="marquee-speed: fast">
+<div style="margin-top: 4%" class="container">
     <span class="weather-item">
-        <i class="temp-icon"></i>
+        <i class="temp-icon weather-icon"></i>
         <span>Temp</span>
         <span id="temperature"></span>
     </span>
 
     <span class="weather-item">
-        <i class="wind-icon"></i>
+        <i class="wind-icon weather-icon"></i>
         <span>Wind</span>
         <span id="wind"></span>
     </span>
 
     <span class="weather-item">
-        <i class="humidity-icon"></i>
+        <i class="humidity-icon weather-icon"></i>
         <span>Humidity</span>
         <span id="humidity"></span>
     </span>
 
     <span class="weather-item">
-        <i class="pressure-icon"></i>
+        <i class="pressure-icon weather-icon"></i>
         <span>Pressure</span>
         <span id="pressure"></span>
     </span>
-
-    <span class="weather-item">
-        <i class="sunrise-icon"></i>
+    <br>
+    <div>
+       <span class="weather-item">
+        <i class="weather-icon sunrise-icon "></i>
         <span>Sunrise</span>
         <span id="sunrise"></span>
     </span>
-
-    <span class="weather-item">
-        <i class="sunset-icon"></i>
+        <span class="weather-item" style="margin-left: 49%">
+        <i class="weather-icon sunset-icon"></i>
         <span>Sunset</span>
         <span id="sunset"></span>
     </span>
+    </div>
 
-</marquee>
+
+</div>
+
+<!-- Modal -->
+<div class="modal fade col-md-3" id="exampleModalLong" tabindex="-1"
+     role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true" style="margin-left: 78%;">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle" style="color: #1b1e21">Bookmarks</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body" style="font-size: 11px; color: #1b1e21; ">
+                <div id="bookmarks"></div>
+                <div id="editdialog"></div>
+                <div id="deletedialog"></div>
+                <div id="adddialog"></div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>

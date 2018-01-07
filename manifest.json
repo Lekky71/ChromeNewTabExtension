@@ -1,8 +1,9 @@
 {
     "name": "Smash New Tab",
-    "version": "1.0",
+    "version": "1.1",
     "manifest_version": 2,
-    "description": "An new tab chrome extension....",
+    "content_security_policy": "script-src 'self' https://ajax.googleapis.com; object-src 'self'",
+    "description": "An new tab chrome extension with beautiful random HD wallpapers, current location weather widget.\n Popular website quicklink\n Google search",
     "chrome_url_overrides": {
         "newtab": "index.html"
     },
@@ -23,6 +24,7 @@
     "permissions": [
         "geolocation",
         "alarms",
+        "bookmarks",
         "<all_urls>"
     ]
 
